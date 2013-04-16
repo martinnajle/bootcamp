@@ -1,32 +1,13 @@
 $(document).ready(function() {
     alert("Page has finished loading");
 
-    $("#alias").focus();
-
-    $("#btnId").click(function(){
-        var name = $("#alias").val();
-        
-        
-
-        $.ajax({
-          url: "http://bootcamp.aws.af.cm/welcome/"+name,
-          type: 'GET',
-          dataType: 'json',
-          context: document.body,
-          beforeSend: function () {
-            $("#message").html('Now loading...');
-          },
-          success: function(data) {
-            $("#message").html(data.response);
-            highlight($("#message"), name);
-          },
-          error: function() {
-            //$div.append("An error occurred in the service call").css("color", "red");
-            $div.append("An error occurred in the service call");
-            $div.addClass("red_colored");
-          }
-        })
-    loadTweets();
+    $('#page1').keydown(function(e){
+        if(e.which == 27){
+            $.mobile.loading( 'hide' );
+            console.log("stop spinner event invoked with ESC");
+        }
+    });
+     loadTweets();
     });
 
     function highlight($id, name) {
@@ -43,18 +24,18 @@ $(document).ready(function() {
             $('.background').show();
             var results = data.results;
             var $list = $('#tweetsList');
-            $list.prepend("<h1>List of tweets:</h1>");
-            var tweet_data;
 
-            for (var i = 0; i < results.length; i++) {
-              tweet_data = "<li>Tweet " + i + ": <br>";
-              tweet_data += "From_user: " + results[i].from_user + "<br>";
-              tweet_data += "Text: " + results[i].text + "<br>";
-              tweet_data += "Created at: " + results[i].created_at + "<br>";
-              tweet_data += "Profile_image_url: <img src='" + results[i].profile_image_url + "'/></li>";
-              $list.append(tweet_data);
+            var tweet_data =""; //"<h1>Tweets list</h1>";
 
-            }
+                for (var i = 0; i < results.length; i++) {
+                    tweet_data += "<li>Tweet " + i + ": <br>";
+                    tweet_data += "From_user: " + results[i].from_user + "<br>";
+                    tweet_data += "Text: " + results[i].text + "<br>";
+                    tweet_data += "Created at: " + results[i].created_at + "<br>";
+                    tweet_data += "<img src='" + results[i].profile_image_url + "'title= 'Profile_image_url: "+ results[i].profile_image_url+ "'></img></li>";
+                }
+                $list.append(tweet_data);
+          $("#tweetsList").listview("refresh"); // This line now updates the listview
 
 
           },
@@ -63,4 +44,3 @@ $(document).ready(function() {
           }
         })
     }
-});
