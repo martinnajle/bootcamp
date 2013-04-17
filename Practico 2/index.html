@@ -22,9 +22,9 @@
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <a href="#page1" id ="boton1" data-role="button" >Tweets list</a>
-      <a href="#page2" id ="boton2" data-role="button" >Page 2</a>
-      <a href="#page3" id ="boton3" data-role="button" >Page 3</a>
+      <a href="#page1" id ="boton1" data-role="button" data-transition="slide">Tweets list</a>
+      <a href="#page2" id ="boton2" data-role="button" data-transition="pop">Page 2</a>
+      <a href="#page3" id ="boton3" data-role="button" data-transition="flip" >Page 3</a>
 
 
     </div>
@@ -32,7 +32,7 @@
       <h1>Bootcamp JQUERY Mobile</h1>
     </div>
   </div>
-  <div data-role="page" id="page1">
+  <div data-role="page" id="page1" data-add-back-btn="true" data-back-btn-text="Home">
     <div data-role="header">
        <h1>Bootcamp JQUERY Mobile</h1>
     </div>
@@ -46,29 +46,38 @@
       <h1>Bootcamp JQUERY Mobile</h1>
     </div>
   </div>
-    <div data-role="page" id="page2">
+    <div data-role="page" id="page2" data-add-back-btn="true" data-back-btn-text="Home">
     <div data-role="header">
        <h1>Page  2</h1>
     </div>
     <div data-role="content">
-      <div class="floated">
-        <ul id="tweetsList" data-role="listview">
-        </ul>
-      </div>
+       <a href="foo.html" data-rel="dialog" data-transition="flip">Open dialog from html </a>
     </div>
     <div data-role="footer">
       <h1>Bootcamp JQUERY Mobile</h1>
     </div>
   </div>
-    <div data-role="page" id="page3">
+  
+    <div data-role="page" id="page3" data-add-back-btn="true" data-back-btn-text="Home">
     <div data-role="header">
        <h1>Page 3</h1>
     </div>
     <div data-role="content">
-      <div class="floated">
-        <ul id="tweetsList" data-role="listview">
-        </ul>
-      </div>
+      <a data-role="button" href="#dialog1" data-rel="dialog" data-transition="pop">Open dialog</a>
+    </div>
+    <div data-role="footer">
+      <h1>Bootcamp JQUERY Mobile</h1>
+    </div>
+  </div>
+
+
+
+    <div data-role="page" id="dialog1">
+    <div data-role="header">
+       <h1>Dialog</h1>
+    </div>
+    <div data-role="content">
+       <a href="#" data-rel="back" data-role="button"> Cancel</a>
     </div>
     <div data-role="footer">
       <h1>Bootcamp JQUERY Mobile</h1>
