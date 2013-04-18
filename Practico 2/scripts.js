@@ -15,24 +15,29 @@ $(document).ready(function() {
     }
 
     function loadTweets(){
-                $.ajax({
+
+      $.ajax({
           url: "http://search.twitter.com/search.json?q=html5&rpp=5&include_entities=true&result_type=mixed",
           type: 'GET',
           dataType: 'jsonp',
           context: document.body,
           success: function(data) {
             $('.background').show();
-            var results = data.results;
+            results = data.results;
             var $list = $('#tweetsList');
-
+            $list.on("click", "li",function(e){
+               var currentItem= ($(this).attr('id')).split("_");
+               $('#item').html('<p>'+results[currentItem[1]].text+'</p>');
+                 
+             });
             var tweet_data =""; //"<h1>Tweets list</h1>";
 
                 for (var i = 0; i < results.length; i++) {
-                    tweet_data += "<li>Tweet " + i + ": <br>";
+                    tweet_data += "<li id='item_"+i+"'><a href='#dialogTweet' data-rel='dialog'>Tweet " + i + ": <br>";
                     tweet_data += "From_user: " + results[i].from_user + "<br>";
                     tweet_data += "Text: " + results[i].text + "<br>";
                     tweet_data += "Created at: " + results[i].created_at + "<br>";
-                    tweet_data += "<img src='" + results[i].profile_image_url + "'title= 'Profile_image_url: "+ results[i].profile_image_url+ "'></img></li>";
+                    tweet_data += "<img src='" + results[i].profile_image_url + "'title= 'Profile_image_url: "+ results[i].profile_image_url+ "'></img></a></li>";
                 }
                 $list.append(tweet_data);
           $("#tweetsList").listview("refresh"); // This line now updates the listview
