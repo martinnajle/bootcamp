@@ -1,5 +1,5 @@
-.background{
-    opacity:0.8;
+.background {
+  opacity:0.8;
 	z-index: 1001;
 	position: fixed;
 	top:0px;
@@ -8,21 +8,21 @@
 	right: 0px;
 	background-color: #FFF ;
 	display: none;
-
 }
 
-.highlight{
-	background-color: yellow;
-}
-.container{
-	position: relative;
+.highlight {
+  background-color: yellow;
 }
 
-.red_colored{
+.container {
+  position: relative;
+}
+
+.red_colored {
 	color: red;
 }
 
-.floated{
+.floated {
 	position: relative;
 	float: left;
 	z-index: 1002;
@@ -32,9 +32,8 @@
 	left: 0px;
 	right: 0px;
 	background-color: #FFF ;
-
 }
 
-#tweetsList{
+#tweetsList {
 	text-align: center;
 }
