@@ -1,7 +1,7 @@
 $(document).ready(function() {
   alert('Page has finished loading');
 
-  $('#page1').keydown(function(e){
+  $('#page1').keydown(function(e) {
     if(e.which == 27) {
       $.mobile.loading( 'hide' );
       console.log('stop spinner event invoked with ESC');

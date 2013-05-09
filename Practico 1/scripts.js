@@ -6,8 +6,7 @@ $(document).ready(function() {
 
     var name = $('#alias').val();
 
-    var $div = $('<div />').appendTo('.container');
-    $div.attr('id', 'newDiv');
+    var $div = $('<div />').appendTo('.container').attr('id', 'newDiv');
 
     $.ajax({
       url: 'http://bootcamp.aws.af.cm/welcome/'+name,

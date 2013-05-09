@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
   var peli= new Movie();
   peli.set('name','Hansel and Gretel');
   $('#play').on('click', function(){
