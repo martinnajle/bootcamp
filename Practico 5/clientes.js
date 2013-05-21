@@ -6,7 +6,7 @@ var contexto = {
         "direccion": "Larrea 1173",
         "telefono": "425700"},
         {
-        "nombre": "MJ",
+        "nombre": "Michael Jordan",
         "direccion": "Alla lejos",
         "telefono": "23"},
         {
