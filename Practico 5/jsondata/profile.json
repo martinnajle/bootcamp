@@ -1,0 +1,26 @@
+{
+    "titulo":"<h1>Agenda<h1>",
+    "clientes" :[
+        {
+            "nombre": "Martin",
+            "direccion": "Larrea 1173",
+            "telefono": "425700",
+            "url":"http://www.nba.com",
+            "text":"Pagina de la NBA"
+        }, 
+
+        {
+            "nombre": "Michael Jordan",
+            "direccion": "Alla lejos",
+            "telefono": "23",
+            "url":"http://www.google.com",
+            "text":"googleemos!" 
+        },   
+        {
+            "nombre": "Dios",
+            "direccion": "Cielo",
+            "telefono": "Nose"
+        }
+    ],
+    "month": 4
+}

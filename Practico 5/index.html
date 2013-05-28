@@ -6,12 +6,14 @@
 </head>
 <body>
 <script id="plantilla_clientes" type="text/x-handlebars-template">
+{{{titulo}}}
   <table border='1'>
     <thead>
         <tr>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Telefono</th>
+            <th>Link</th>
         </tr>
     </thead>
     {{#each clientes}}
@@ -19,8 +21,17 @@
           <td>{{this.nombre}}</td>
           <td>{{this.direccion}}</td>
           <td>{{this.telefono}}</td>
+          {{#if this.url}}
+            <td>{{link this.text this.url}}</td>
+          {{else}}
+             <td>Undefined</td>
+          {{/if}}
       </tr>
-    {{/each}}          
+    {{/each}}   
+    <p>
+    Fecha
+    {{convertMonth month}}    
+    </p>   
   </table>
 </script>
 
