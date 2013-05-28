@@ -40,7 +40,7 @@ social_movie.share('Pepe');
 console.log(social_movie);
 
 var Actor = function (name) {
-  this.name=name;
+  this.name = name;
   this.performs = function() {
     console.log('Ohhh my love, where are you, and blah blah');
   }
